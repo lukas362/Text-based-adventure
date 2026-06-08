@@ -1,0 +1,53 @@
+# This Ansible playbook installs Python and PyGame on the local machine "the device you are using" and runs the game.py python script
+
+# Only run this playbook if you are on Linux or macOS, because Anisble does not support Windows
+# If you are on Windows go to the README.md or the .bat file for instructions on how to run the game on Windows
+
+# The playbook performs the following steps:
+# 1. It will first checks if Python and PyGame are already installed
+# 2. Then it will install Python and PyGame if they are not already installed
+# 3. Finally, it will run the game.py script
+
+# Before you can run this playbook, make sure you have Ansible installed:
+
+# - On macOS: brew install ansible
+# - On Ubuntu/Debian: sudo apt install ansible
+# - On other Linux distros: pip3 install ansible
+
+# How to run this playbook (terminal):
+# ansible-playbook setup.yml
+
+---
+- name: Install Python and PyGame + run them
+  hosts: localhost
+  tasks:
+    - name: Check if Python is installed
+      ansible.builtin.command: python3 --version
+      register: python_check
+      when: ansible_facts['os_family'] != "Windows"
+      ignore_errors: true
+      changed_when: false
+
+    - name: Check if PyGame is installed
+      ansible.builtin.command: python3 -c "import pygame"
+      register: pygame_check
+      when: ansible_facts['os_family'] != "Windows"
+      ignore_errors: true
+      changed_when: false
+
+    - name: Install Python on Linux/macOS
+      ansible.builtin.package:
+        name: python3
+        state: present
+      when: python_check is failed and ansible_facts['os_family'] != "Windows"
+
+    - name: Install pygame on Linux/macOS
+      ansible.builtin.pip:
+        name: pygame
+        state: present
+      when: pygame_check is failed and ansible_facts['os_family'] != "Windows"
+
+    - name: Run the game Linux/macOS
+      ansible.builtin.command: python3 game.py
+      when: ansible_facts['os_family'] != "Windows"
+      changed_when: false
