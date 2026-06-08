@@ -2,6 +2,12 @@
 
 :: This script is designed for Windows users. For Linux/macOS, use the setup.yml Ansible playbook.
 
+:: This bat file will preforme the following steps:
+:: 1. Check if Python 3 is installed
+:: 2. If Python 3 is not found, it will then try Python and if that doesn't work it will prompt the user to install it
+:: 3. If Python is found, it will check for PyGame and install it if necessary
+:: 4. And least but not last it will launch the game
+
 :: How to run (terminal):
 :: install_and_run.bat
 
