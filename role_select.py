@@ -1,16 +1,20 @@
 def role():
+    # list and dictionary to store the player's inventory and stats
     inventory = []
     stats = {}
 
+    # color codes for the different classes
     BLUE = "\033[34m"
     RED = "\033[31m"
     GREEN = "\033[32m"
     RESET = "\033[0m"
 
+    # vars for the different classes
     w = "wizard"
     s_a_s = "warrior"
     b_a_a = "archer"
 
+    # selection of the player's class and the stats and inventory that come with it
     selection = input(f"You can see Wizard Staff, Sword and Shield and a Bow and Arrow on the ground next to you. \nWhat do you pick up?\n{BLUE}[1] Wizard Staff{RESET}\n{RED}[2] Sword and Shield{RESET}\n{GREEN}[3] Bow and Arrow{RESET} \nYou decide to pick up: ").lower()
 
     if selection == "1" or selection == "wizard staff":
