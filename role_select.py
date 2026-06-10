@@ -55,5 +55,5 @@ def role():
         stats["charisma"] = 5
 
     else: 
-        print("Invalid selection, please select a class.")
+        print("Invalid selection, please select one of the classes: ")
         return role()
