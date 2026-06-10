@@ -2,9 +2,19 @@ def role():
     inventory = []
     stats = {}
 
-    selection = input("You can see Wizard staff, sword and shield and a bow and arrow on the ground next to you. What do you pick up? (wizard staff, sword and shield, bow and arrow): \n").lower()
+    BLUE = "\033[34m"
+    RED = "\033[31m"
+    GREEN = "\033[32m"
+    RESET = "\033[0m"
 
-    if selection == "wizard staff":
+    w = "wizard"
+    s_a_s = "warrior"
+    b_a_a = "archer"
+
+    selection = input(f"You can see Wizard Staff, Sword and Shield and a Bow and Arrow on the ground next to you. \nWhat do you pick up?\n{BLUE}[1] Wizard Staff{RESET}\n{RED}[2] Sword and Shield{RESET}\n{GREEN}[3] Bow and Arrow{RESET} \nYou decide to pick up: ").lower()
+
+    if selection == "1" or selection == "wizard staff":
+        print(f"You chose the Wizard Staff, therefore you are a {BLUE}{w}{RESET}")
         inventory.append("wizard_staff")
         stats["hp"] = 25
         stats["max_hp"] = 50
@@ -20,7 +30,8 @@ def role():
         stats["intelligence"] = 7
         stats["charisma"] = 4
 
-    elif selection == "sword and shield":
+    elif selection == "2" or selection == "sword and shield":
+        print(f"You chose the Sword and Shield, therefore you are a {RED}{s_a_s}{RESET}")
         inventory.append("sword")
         inventory.append("shield")
         stats["hp"] = 50
@@ -37,7 +48,8 @@ def role():
         stats["intelligence"] = 3
         stats["charisma"] = 4
     
-    elif selection == "bow and arrow":
+    elif selection == "3" or selection == "bow and arrow":
+        print(f"You chose the Bow and Arrow, therefore you are an {GREEN}{b_a_a}{RESET}")
         inventory.append("bow")
         inventory.append("arrows")
         stats["hp"] = 40
@@ -55,5 +67,5 @@ def role():
         stats["charisma"] = 5
 
     else: 
-        print("Invalid selection, please select one of the classes: ")
+        print("Invalid selection, please select one of the weapons: \n")
         return role()
