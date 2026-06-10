@@ -10,15 +10,15 @@ def role():
     RESET = "\033[0m"
 
     # vars for the different classes
-    w = "wizard"
-    s_a_s = "warrior"
-    b_a_a = "archer"
+    w_s = "wizard"      # w_s = short for wizard staff
+    s_a_s = "warrior"   # s_a_s = short for sword and shield
+    b_a_a = "archer"    # b_a_a = short for bow and arrow
 
     # selection of the player's class and the stats and inventory that come with it
     selection = input(f"You can see Wizard Staff, Sword and Shield and a Bow and Arrow on the ground next to you. \nWhat do you pick up?\n{BLUE}[1] Wizard Staff{RESET}\n{RED}[2] Sword and Shield{RESET}\n{GREEN}[3] Bow and Arrow{RESET} \nYou decide to pick up: ").lower()
 
     if selection == "1" or selection == "wizard staff":
-        print(f"You chose the Wizard Staff, therefore you are a {BLUE}{w}{RESET}")
+        print(f"You chose the Wizard Staff, therefore you are a {BLUE}{w_s}{RESET}")
         inventory.append("wizard_staff")
         stats["hp"] = 25
         stats["max_hp"] = 50
