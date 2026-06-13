@@ -1,4 +1,4 @@
-:: This batch file checks for Python, Python 3 and PyGame, installs them if necessary, and then runs the game. It won't install Python.
+:: This batch file checks for Python, Python 3 and PyGame, and then runs the game if it can. It won't install Python or anything else, only use for checking.
 
 :: This script is designed for Windows users. For Linux/macOS, use the setup.yml Ansible playbook.
 
@@ -9,7 +9,7 @@
 :: 4. And least but not last it will launch the game
 
 :: How to run (terminal):
-:: install_and_run.bat
+:: .\install.bat
 
 @echo off
 :: Check for Python 3 Installation
