@@ -80,13 +80,9 @@ def show_inventory(inventory):
     print("\nThis is your inventory:")
     if inventory:
         for item in inventory:
-            print(f"  - {item}")
-    else:
-        print("Your inventory is empty.")
+            print(f"  - {item} \n")
 
 def show_stats(stats):
     print("\nThese are your stats:")
     for key, value in stats.items():
-        print(f"  {key}: {value}")
-    else:
-        print("Your stats are not set.")
+        print(f"  {key}: {value} \n")

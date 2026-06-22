@@ -13,4 +13,6 @@ from src.menu import menu
 
 story(1)
 inventory, stats = role()
-menu(inventory, stats)
+story(2)
+menu(inventory, stats, unlocked=True)
+
