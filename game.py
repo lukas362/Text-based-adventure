@@ -9,6 +9,6 @@ from src.role_select import role
 from src.story import story
 from src.menu import menu
 
-story()
-role()
-menu()
+story(1)
+inventory, stats = role()
+menu(inventory, stats)

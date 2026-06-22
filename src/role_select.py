@@ -73,3 +73,20 @@ def role():
     else: 
         print("Invalid selection, please select one of the weapons: \n")
         return role()
+    
+    return inventory, stats
+
+def show_inventory(inventory):
+    print("\nThis is your inventory:")
+    if inventory:
+        for item in inventory:
+            print(f"  - {item}")
+    else:
+        print("Your inventory is empty.")
+
+def show_stats(stats):
+    print("\nThese are your stats:")
+    for key, value in stats.items():
+        print(f"  {key}: {value}")
+    else:
+        print("Your stats are not set.")
