@@ -6,7 +6,7 @@
 import pygame
 import colorama
 from src.role_select import role
-from story import story
+from src.story import story
 from src.menu import menu
 
 story()
