@@ -27,9 +27,9 @@ if errorlevel 1 goto errorNoPython
 set PYTHON=python
 
 :install
-:: Install PyGame
-echo Installing PyGame...
-pip install pygame
+:: Install colorama
+echo Installing colorama...
+pip install colorama
 
 :: Launch the game
 echo Starting game...
