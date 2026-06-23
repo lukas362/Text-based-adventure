@@ -5,7 +5,6 @@
 # py -3.12 -m pip install pygame
 # py -3.12 -m pip install colorama
 
-import pygame
 import colorama
 from src.role_select import role
 from src.story import story
@@ -15,4 +14,3 @@ story(1)
 inventory, stats = role()
 story(2)
 menu(inventory, stats, unlocked=True)
-
