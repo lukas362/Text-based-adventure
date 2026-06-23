@@ -9,7 +9,14 @@ from src.role_select import role
 from src.story import story
 from src.menu import menu
 
-story(1)
-inventory, stats = role()
-story(2)
-menu(inventory, stats, unlocked=True)
+def main():
+	while True:
+		story(1)
+		inventory, stats = role()
+		result = story(2, stats)
+		if result == "restart":
+			continue
+		menu(inventory, stats, unlocked=True)
+		break
+	
+run = main()

@@ -4,6 +4,7 @@ def menu(inventory, stats, unlocked=False):
     BLUE = "\033[34m"
     RED = "\033[31m"
     GREEN = "\033[32m"
+    YELLOW = "\033[33m"
     RESET = "\033[0m"
 
     if not unlocked:
@@ -14,7 +15,7 @@ def menu(inventory, stats, unlocked=False):
         menu_open = input()
         if menu_open.lower() == "menu":
             while True:
-                selection = input(f"You open your menu, you can pick between: \n{BLUE}[1] Inventory{RESET}\n{RED}[2] Stats{RESET}\n{GREEN}[3] Exit Menu{RESET} \nYou decide to: ")
+                selection = input(f"You open your menu, you can pick between: \n{BLUE}[1] Inventory{RESET}\n{RED}[2] Stats{RESET}\n{GREEN}[3] Exit Menu{RESET} \nYou decide to: ").lower()
                 if selection == "1" or selection == "inventory":
                     show_inventory(inventory)
 

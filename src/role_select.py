@@ -7,6 +7,7 @@ def role():
     BLUE = "\033[34m"
     RED = "\033[31m"
     GREEN = "\033[32m"
+    YELLOW = "\033[33m"
     RESET = "\033[0m"
 
     # vars for the different classes
@@ -16,11 +17,12 @@ def role():
 
     # selection of the player's class and the stats and inventory that come with it
     selection = input(f"You can see Wizard Staff, Sword and Shield and a Bow and Arrow on the ground next to you. \nWhat do you pick up?\n{BLUE}[1] Wizard Staff{RESET}\n{RED}[2] Sword and Shield{RESET}\n{GREEN}[3] Bow and Arrow{RESET} \nYou decide to pick up: ").lower()
-
-    if selection == "1" or selection == "wizard staff":
-        print(f"You chose the Wizard Staff, therefore you are a {BLUE}{w_s}{RESET}")
+    
+    if selection == "1" or selection.lower() == "wizard staff":
+        print(f"You chose the Wizard Staff, therefore you are a {BLUE}{w_s}{RESET} \n")
         inventory.append("wizard_staff")
-        stats["hp"] = 25
+        stats["attack"] = 40
+        stats["total_hp"] = 25
         stats["max_hp"] = 50
         stats["stamina"] = 40
         stats["max_stamina"] = 50
@@ -34,11 +36,12 @@ def role():
         stats["intelligence"] = 7
         stats["charisma"] = 4
 
-    elif selection == "2" or selection == "sword and shield":
-        print(f"You chose the Sword and Shield, therefore you are a {RED}{s_a_s}{RESET}")
+    elif selection == "2" or selection.lower() == "sword and shield":
+        print(f"You chose the Sword and Shield, therefore you are a {RED}{s_a_s}{RESET} \n")
         inventory.append("sword")
         inventory.append("shield")
-        stats["hp"] = 50
+        stats["attack"] = 30
+        stats["total_hp"] = 50
         stats["max_hp"] = 100
         stats["stamina"] = 70
         stats["max_stamina"] = 80
@@ -52,11 +55,12 @@ def role():
         stats["intelligence"] = 3
         stats["charisma"] = 4
     
-    elif selection == "3" or selection == "bow and arrow":
-        print(f"You chose the Bow and Arrow, therefore you are an {GREEN}{b_a_a}{RESET}")
+    elif selection == "3" or selection.lower() == "bow and arrow":
+        print(f"You chose the Bow and Arrow, therefore you are an {GREEN}{b_a_a}{RESET} \n")
         inventory.append("bow")
         inventory.append("arrows")
-        stats["hp"] = 40
+        stats["attack"] = 35
+        stats["total_hp"] = 40
         stats["max_hp"] = 75
         stats["stamina"] = 50
         stats["max_stamina"] = 60
