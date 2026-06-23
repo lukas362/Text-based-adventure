@@ -28,12 +28,12 @@
       ignore_errors: true
       changed_when: false
 
-    - name: Check if PyGame is installed
-      ansible.builtin.command: python3 -c "import pygame"
-      register: pygame_check
-      when: ansible_facts['os_family'] != "Windows"
-      ignore_errors: true
-      changed_when: false
+#    - name: Check if PyGame is installed
+#      ansible.builtin.command: python3 -c "import pygame"
+#      register: pygame_check
+#      when: ansible_facts['os_family'] != "Windows"
+#      ignore_errors: true
+#      changed_when: false
 
     - name: Check if colorama is installed
       ansible.builtin.command: python3 -c "import colorama"
@@ -48,11 +48,11 @@
         state: present
       when: python_check is failed and ansible_facts['os_family'] != "Windows"
 
-    - name: Install pygame on Linux/macOS
-      ansible.builtin.pip:
-        name: pygame
-        state: present
-      when: pygame_check is failed and ansible_facts['os_family'] != "Windows"
+#    - name: Install pygame on Linux/macOS
+#      ansible.builtin.pip:
+#        name: pygame
+#        state: present
+#      when: pygame_check is failed and ansible_facts['os_family'] != "Windows"
 
     - name: Install colorama on Linux/macOS
       ansible.builtin.pip:
