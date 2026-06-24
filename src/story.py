@@ -22,7 +22,7 @@ def story(stage, stats=None):
                 damage = goblin_stats["Attack"]
                 stats["total_hp"] -= damage
                 print(f"You attack the {RED}{enemy_goblin}{RESET} and you manage to kill it, but you got injured in the process. \n")
-                print(f"You lose {damage} HP. Your current HP is now {stats['total_hp']}")
+                print(f"You lose {damage} HP. Your current HP is now {stats['total_hp']} \n")
                 
             elif choice == "2" or choice.lower() == "check":
                 print(f"Goblin Stats: {goblin_stats} \n")
@@ -43,4 +43,7 @@ def story(stage, stats=None):
                 return(story(2, stats))
 
     elif stage == 3:
-        print(f"You manage to survive the encounter with the {enemy_goblin}, you can gratualy hear the sound of fighting around you getting quieter and quieter and in the distance you can see a ")
+        print(f"You manage to survive the encounter with the {RED}{enemy_goblin}{RESET}, you can gratualy hear the sound of fighting and screamingaround you getting quieter and quieter and in the distance you can see a {YELLOW}group{RESET} of people approaching you.")
+        print(f"The group of people intorduce themselves as the group of the {YELLOW}caravan{RESET} that you helped defend. As a gratetute over helping them they tell you about two very important things\n1. You can access you're {YELLOW}items{RESET} and {YELLOW}stats{RESET} by typing in {YELLOW}menu{RESET} in the {YELLOW}terminal{RESET}\n2. They tell you about what {YELLOW}location{RESET} that you are in and where you can move from here on out. From what you can gather you can either: \n")
+
+        move = input(f"{BLUE}[1] Move foward{RESET}\n{RED}[2] Move left{RESET}\n{GREEN}[3] Move right{RESET}")
