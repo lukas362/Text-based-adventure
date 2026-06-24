@@ -80,12 +80,14 @@ def role():
     
     return inventory, stats
 
+# functions to show the player's inventory, will be called in the menu.py file
 def show_inventory(inventory):
     print("\nThis is your inventory:")
     if inventory:
         for item in inventory:
             print(f"  - {item} \n")
 
+# functions to show the player's stats, will be called in the menu.py file
 def show_stats(stats):
     print("\nThese are your stats:")
     for key, value in stats.items():

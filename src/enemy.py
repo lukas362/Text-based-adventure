@@ -1,3 +1,4 @@
+# This file contains all enemys that you can encounter + their stats
 def enemy():
     return {}
 

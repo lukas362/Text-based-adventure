@@ -1,3 +1,5 @@
+# This file contains the story of the game, this will be called and executed in the game.py file which acts as the main file of the "game"
+
 from src.enemy import *
 from src.role_select import *
 
