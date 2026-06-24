@@ -1,4 +1,8 @@
 # This file contains all enemys that you can encounter + their stats
+
+# Variables for the diffrent enemys
+enemy_goblin = "Goblin"
+
 def enemy():
     return {}
 

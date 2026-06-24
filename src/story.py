@@ -15,13 +15,13 @@ def story(stage, stats=None):
         print("You wake up dazed, confused and you can hear screaming voices around you. You look around and you can see goblins, orcs and humans fighting each other.")
     elif stage == 2:
         goblin_stats = goblin()
-        choice = input(f"You can see a {RED}Goblin{RESET} running towards you, you can see that it has a axe in it's hand and it looks like it is going to attack you. {YELLOW}How will you proceed?{RESET}\n{RED}[1] Attack the goblin{RESET}\n{BLUE}[2] Check enemy stats{RESET}\n{GREEN}[3] Run away{RESET}\nYou decide to: ")
+        choice = input(f"You can see a {RED}{enemy_goblin}{RESET} running towards you, you can see that it has a axe in it's hand and it looks like it is going to attack you. {YELLOW}How will you proceed?{RESET}\n{RED}[1] Attack the {enemy_goblin}{RESET}\n{BLUE}[2] Check enemy stats{RESET}\n{GREEN}[3] Run away{RESET}\nYou decide to: ")
         
         if stats:
             if choice == "1" or choice.lower() == "attack":
                 damage = goblin_stats["Attack"]
                 stats["total_hp"] -= damage
-                print(f"You attack the {RED}Goblin{RESET} and you manage to kill it, but you got injured in the process. \n")
+                print(f"You attack the {RED}{enemy_goblin}{RESET} and you manage to kill it, but you got injured in the process. \n")
                 print(f"You lose {damage} HP. Your current HP is now {stats['total_hp']}")
                 
             elif choice == "2" or choice.lower() == "check":
@@ -29,7 +29,7 @@ def story(stage, stats=None):
                 return story(2, stats)
             
             elif choice == "3" or choice.lower() == "run":
-                print(f"You run away from the {RED}Goblin{RESET}! \n")
+                print(f"You run away from the {RED}{enemy_goblin}{RESET}! \n")
                 if choice == "3" or choice.lower() == "run":
                     print(f"{RED}You're story ends here \n{RESET}")
 
@@ -43,4 +43,4 @@ def story(stage, stats=None):
                 return(story(2, stats))
 
     elif stage == 3:
-        print("")
+        print(f"You manage to survive the encounter with the {enemy_goblin}, you can gratualy hear the sound of fighting around you getting quieter and quieter and in the distance you can see a ")
