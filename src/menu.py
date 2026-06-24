@@ -30,3 +30,4 @@ def menu(inventory, stats, unlocked=False):
                     return
                 else: 
                     print("Invalid selection, please select one of the options: \n")
+                    continue
