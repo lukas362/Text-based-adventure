@@ -16,7 +16,9 @@ def main():
 		result = story(2, stats)
 		if result == "restart":
 			continue
+		story(3)
 		menu(inventory, stats, unlocked=True)
+
 		break
 	
 run = main()

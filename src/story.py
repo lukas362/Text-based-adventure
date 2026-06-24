@@ -38,3 +38,7 @@ def story(stage, stats=None):
                         quit()
             else:
                 print("Invalid selection, please select one of the options: \n")
+                return(story(2, stats))
+
+    elif stage == 3:
+        print("")
