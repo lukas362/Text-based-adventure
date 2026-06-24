@@ -20,9 +20,11 @@ def story(stage, stats=None):
         if stats:
             if choice == "1" or choice.lower() == "attack":
                 damage = goblin_stats["Attack"]
+                xp = goblin_stats["xp"]
                 stats["total_hp"] -= damage
+                stats["xp"] += xp
                 print(f"You attack the {RED}{enemy_goblin}{RESET} and you manage to kill it, but you got injured in the process. \n")
-                print(f"You lose {damage} HP. Your current HP is now {stats['total_hp']} \n")
+                print(f"You lose {damage} HP. Your current HP is now {stats['total_hp']}. You got {stats['xp']}{xp_given} from defeating the {RED}{enemy_goblin}{RESET} \n")
                 
             elif choice == "2" or choice.lower() == "check":
                 print(f"Goblin Stats: {goblin_stats} \n")
@@ -44,6 +46,18 @@ def story(stage, stats=None):
 
     elif stage == 3:
         print(f"You manage to survive the encounter with the {RED}{enemy_goblin}{RESET}, you can gratualy hear the sound of fighting and screamingaround you getting quieter and quieter and in the distance you can see a {YELLOW}group{RESET} of people approaching you.")
-        print(f"The group of people intorduce themselves as the group of the {YELLOW}caravan{RESET} that you helped defend. As a gratetute over helping them they tell you about two very important things\n1. You can access you're {YELLOW}items{RESET} and {YELLOW}stats{RESET} by typing in {YELLOW}menu{RESET} in the {YELLOW}terminal{RESET}\n2. They tell you about what {YELLOW}location{RESET} that you are in and where you can move from here on out. From what you can gather you can either: \n")
+        print(f"The group of people intorduce themselves as the group of the {YELLOW}caravan{RESET} that you helped defend. As a gratetute over helping them they tell you about two very important things.")
+        print(f"1. You can access you're {YELLOW}items{RESET} and {YELLOW}stats{RESET} by typing in {YELLOW}menu{RESET} in the {YELLOW}terminal{RESET}\n2. They tell you about what {YELLOW}location{RESET} that you are in and where you can move from here on out. From what you can gather you can either: \n")
 
-        move = input(f"{BLUE}[1] Move foward{RESET}\n{RED}[2] Move left{RESET}\n{GREEN}[3] Move right{RESET}")
+        move = input(f"{BLUE}[1] Move foward{RESET}\n{RED}[2] Move left{RESET}\n{GREEN}[3] Move right{RESET} \nYou decide to move: ")
+
+        if move == "1" or move.lower() == "move forward": # lose automaticly all the time lel
+            pass
+        elif move == "2" or move.lower() == "move left": # need to go here first to win and get key
+            pass
+        elif move == "3" or move.lower() == "move right": # win + key needed to unlock door
+            pass
+        
+        else:
+            print("Invalid selection, please select one of the options: \n")
+            return(story(3, move))
