@@ -31,7 +31,7 @@ ansible-playbook setup.yml
 
 ---
  
-### Windows — Batch Script
+### Windows - Batch Script
  
 The `install.bat` script checks for Python, installs `colorama`, and launches the game. It does **not** install Python itself.
  
