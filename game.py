@@ -13,12 +13,17 @@ def main():
 	while True:
 		story(1)
 		inventory, stats = role()
-		result = story(2, stats)
+		result = story(2, stats, inventory)
 		if result == "restart":
 			continue
-		story(3)
+		result = story(3, stats, inventory)
+		if result == "restart":
+			continue
+		result = story(4, stats, inventory)
+		if result == "restart":
+			continue
 		menu(inventory, stats, unlocked=True)
-
+		
 		break
-	
+
 run = main()
