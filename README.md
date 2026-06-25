@@ -1,8 +1,6 @@
 # Text based game in Python
 A simple text based game made in Python with Anisble and Batchfile for automatic instalaltion of Python and Python dependencies
 
----
-
 ## Requirements
 
 - **Python 3.12.10 or lower**
@@ -61,5 +59,3 @@ py -3.12 -m pip install colorama
 # Launch the game
 python3 game.py
 ```
- 
----
