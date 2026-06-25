@@ -4,7 +4,7 @@ A simple text based game made in Python with Anisble and Batchfile for automatic
 ## Requirements
 
 - **Python 3.12.10 or lower**
-- **colorama**
+- **Colorama**
 > **Note:** pygame references in the code are currently unused/commented out. Only `colorama` is required to run the game.
 
 ---
